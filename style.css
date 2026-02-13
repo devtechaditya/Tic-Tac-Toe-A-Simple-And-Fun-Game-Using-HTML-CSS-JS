@@ -1,0 +1,150 @@
+/* ================== RESET ================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================== THEME VARIABLES ================== */
+:root {
+    --bg-color: #829191;
+    --text-color: #1f2f2d;
+    --box-color: #2C423F;
+    --box-text: #829191;
+    --btn-bg: #2C423F;
+    --btn-text: #ffffff;
+    --win-color: #1f2f2d;
+}
+
+.dark-theme {
+    --bg-color: #121212;
+    --text-color: #eaeaea;
+    --box-color: #1e1e1e;
+    --box-text: #00ffd5;
+    --btn-bg: #333333;
+    --btn-text: #ffffff;
+    --win-color: #00ffd5;
+}
+
+/* ================== BODY ================== */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+}
+
+/* ================== MAIN ================== */
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+/* ================== TITLE ================== */
+.title {
+    font-size: 2rem;
+}
+
+/* ================== TURN INDICATOR ================== */
+#turn-indicator {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* ================== SCOREBOARD ================== */
+.scoreboard {
+    display: flex;
+    gap: 2rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.75rem;
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.dark-theme .scoreboard {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.scoreboard p {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+#score-o,
+#score-x {
+    font-weight: 700;
+}
+
+/* ================== GAME ================== */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+}
+
+.box {
+    height: 18vmin;
+    width: 18vmin;
+    background-color: var(--box-color);
+    color: var(--box-text);
+    font-size: 9vmin;
+    border-radius: 1vmin;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+}
+
+/* ================== WIN ANIMATION ================== */
+.win {
+    background-color: var(--win-color) !important;
+    animation: pulse 0.6s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.08);
+    }
+}
+
+/* ================== BUTTONS ================== */
+.reset-btn,
+#theme-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+}
+
+.reset-btn {
+    margin-bottom: 2.5rem;
+}
+
+.reset-btn:hover,
+#theme-btn:hover {
+    opacity: 0.9;
+}
+
+#theme-btn {
+    margin-top: 1rem;
+}
